@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "proto/;pb";
+
+service CalculatorService {
+    rpc DivideNumbers(DivideNumbersRequest) returns (DivideNumbersResponse);
+}
+
+// number_one / number_two
+message DivideNumbersRequest {
+    float number_one = 1;
+    float number_two = 2;
+}
+
+message DivideNumbersResponse {
+    int32 code = 1;
+    float answer = 2;
+}
